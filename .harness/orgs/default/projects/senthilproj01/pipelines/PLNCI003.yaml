@@ -40,4 +40,5 @@ pipeline:
                     shell: Sh
                     command: |-
                       cd /harness/resources/simple-java-app-01
-                      mvn clean install -DskipTests -X
+                      mvn clean package
+                      find ./target
