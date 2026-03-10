@@ -32,9 +32,12 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: Check git src
-                  identifier: Run_1
+                  name: Maven Build
+                  identifier: Maven_Build
                   spec:
+                    connectorRef: account.harnessImage
+                    image: maven:3.9.0-eclipse-temurin-11
                     shell: Sh
-                    command: find /harness
-                  description: mvn build
+                    command: |-
+                      cd /harness/resources/simple-java-app-01
+                      mvn clean install -DskipTests -X
