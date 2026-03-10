@@ -8,8 +8,9 @@ pipeline:
     ci:
       codebase:
         connectorRef: senthilgitconn03
-        repoName: hands-on-workbook Private
+        repoName: hands-on-workbook
         build: <+input>
+        sparseCheckout: []
   stages:
     - stage:
         name: buildJar
