@@ -31,7 +31,7 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: Run_1
+                  name: Check git src
                   identifier: Run_1
                   spec:
                     shell: Sh
