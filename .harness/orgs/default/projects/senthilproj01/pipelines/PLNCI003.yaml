@@ -36,7 +36,7 @@ pipeline:
                   identifier: Maven_Build
                   spec:
                     connectorRef: account.harnessImage
-                    image: maven:3.9.0-eclipse-temurin-11
+                    image: maven:3.9.0-eclipse-temurin-17
                     shell: Sh
                     command: |-
                       cd /harness/resources/simple-java-app-01
