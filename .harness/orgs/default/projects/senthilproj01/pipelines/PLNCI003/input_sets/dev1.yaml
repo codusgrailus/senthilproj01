@@ -1,0 +1,14 @@
+inputSet:
+  pipeline:
+    identifier: PLNCI003
+    properties:
+      ci:
+        codebase:
+          build:
+            spec:
+              branch: dev1
+            type: branch
+  name: dev1
+  identifier: dev1
+  orgIdentifier: default
+  projectIdentifier: senthilproj01
