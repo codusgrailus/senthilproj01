@@ -1,0 +1,39 @@
+pipeline:
+  name: PLN-CI-003
+  identifier: PLNCI003
+  projectIdentifier: senthilproj01
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: senthilgitconn03
+        repoName: hands-on-workbook Private
+        build: <+input>
+  stages:
+    - stage:
+        name: buildJar
+        identifier: buildJar
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: false
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    shell: Sh
+                    command: find /harness
+                  description: mvn build
