@@ -45,3 +45,26 @@ pipeline:
                     spec:
                       connectorRef: <+input>
         tags: {}
+    - stage:
+        name: s3
+        identifier: s3
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: ls /
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
