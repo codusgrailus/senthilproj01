@@ -1,0 +1,34 @@
+pipeline:
+  name: db-apply-git-experience
+  identifier: dbapplygitexperience
+  projectIdentifier: senthilproj01
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: s2
+        identifier: s2
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - stepGroup:
+                  name: stepgroup_ixe
+                  identifier: stepgroup_ixe
+                  steps:
+                    - step:
+                        type: DBSchemaApply
+                        name: DBSchemaApply_1
+                        identifier: DBSchemaApply_1
+                        spec:
+                          connectorRef: account.harnessImage
+                          migrationType: Liquibase
+                          dbSchema: may06schema
+                          dbInstance: may06dbinst001
+                        timeout: 10m
+                  stepGroupInfra:
+                    type: KubernetesDirect
+                    spec:
+                      connectorRef: <+input>
+        tags: {}
