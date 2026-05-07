@@ -45,6 +45,8 @@ pipeline:
                     spec:
                       connectorRef: <+input>
         tags: {}
+        delegateSelectors:
+          - senthilk8smay06c002delegate
     - stage:
         name: s3
         identifier: s3
