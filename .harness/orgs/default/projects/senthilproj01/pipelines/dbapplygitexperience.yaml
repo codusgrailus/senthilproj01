@@ -27,6 +27,19 @@ pipeline:
                           dbSchema: may06schema
                           dbInstance: may06dbinst001
                         timeout: 10m
+                    - step:
+                        type: DBSchemaRollback
+                        name: DBSchemaRollback_1
+                        identifier: DBSchemaRollback_1
+                        spec:
+                          connectorRef: account.harnessImage
+                          migrationType: Liquibase
+                          dbSchema: may06schema
+                          dbInstance: may06dbinst001
+                          changeSetCount: 1
+                        timeout: 10m
+                        when:
+                          stageStatus: Failure
                   stepGroupInfra:
                     type: KubernetesDirect
                     spec:
