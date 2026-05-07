@@ -40,6 +40,10 @@ pipeline:
                         timeout: 10m
                         when:
                           stageStatus: Failure
+                  stepGroupInfra:
+                    type: KubernetesDirect
+                    spec:
+                      connectorRef: <+input>
         tags: {}
         delegateSelectors:
           - senthilk8smay06c002delegate
