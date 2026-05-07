@@ -68,5 +68,7 @@ pipeline:
                     outputVariables: []
                   timeout: 10m
         tags: {}
+        delegateSelectors:
+          - senthilk8smay06c002delegate
   delegateSelectors:
     - senthilk8smay06c002delegate
